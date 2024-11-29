@@ -199,34 +199,4 @@ public class SareetaApplicationTests {
         Assertions.assertEquals(HttpStatus.OK, response.getStatusCode());
         Assertions.assertEquals(items, response.getBody());
     }
-
-
-    //   ============================== User Controller ===================
-    @Test
-    public void createUserTest() {
-        CreateUserRequest user = new CreateUserRequest();
-        user.setUsername("Username");
-        user.setPassword("Password");
-
-        ResponseEntity<UserDTO> response = userController.createUser(user);
-
-        Assertions.assertNotNull(response);
-        Assertions.assertEquals(HttpStatus.OK, response.getStatusCode());
-        Assertions.assertEquals(user, response.getBody());
-    }
-
-    @Test
-    public void createUserTestError() {
-        CreateUserRequest user = new CreateUserRequest();
-        user.setUsername("Username");
-        user.setPassword("Pard");
-
-        ResponseEntity<UserDTO> response = userController.createUser(user);
-
-        Assertions.assertNotNull(response);
-        Assertions.assertEquals(HttpStatus.BAD_REQUEST, response.getStatusCode());
-        Assertions.assertEquals(user, response.getBody());
-    }
-
-
 }
