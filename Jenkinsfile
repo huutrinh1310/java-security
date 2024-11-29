@@ -13,8 +13,7 @@ pipeline {
         stage('Checkout Code') {
             steps {
                 echo 'Pull latest code'
-                sh 'cd /home/ubuntu/java-security'
-                sh 'git pull origin main'
+                sh 'cd /home/ubuntu/java-security && git pull origin main'
             }
         }
 
